@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net6.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ArgumentsExample\ArgumentsExample.csproj" />
+    <ProjectReference Include="..\DelegatesExample\DelegatesExample.csproj" />
+    <ProjectReference Include="..\EventsExample\EventsExample.csproj" />
+    <ProjectReference Include="..\ExceptionsExample\ExceptionsExample.csproj" />
+    <ProjectReference Include="..\FileSystemExample\FileSystemExample.csproj" />
+    <ProjectReference Include="..\OOPExample\OOPExample.csproj" />
+  </ItemGroup>
+
+</Project>
