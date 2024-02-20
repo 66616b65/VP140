@@ -16,10 +16,11 @@ namespace ExampleUI
         static void Main(string[] args)
         {
             //Inheritance();
+            //StringFormat();
             //StringIntern();
             //Delegates();
             //Exceptions();
-            Arguments();
+            //Arguments();
             //Events();
             //FileSystem();
 
@@ -48,6 +49,62 @@ namespace ExampleUI
             {
                 Console.WriteLine(i.ToString());
             }
+        }
+
+        static void StringFormat()
+        {
+            string item = "Табурет";
+            int price = 1000;
+
+            //Форматирование строк
+            string result = string.Format("Товар {0} стоимостью {1}", item, price);
+            Console.WriteLine(result);
+
+            //Форматирование целых чисел
+            result = string.Format("Товар {0} стоимостью {1:d}", item, price);
+            Console.WriteLine(result);
+            result = string.Format("Товар {0} стоимостью {1:d6}", item, price);
+            Console.WriteLine(result);
+
+            double price2 = 999.99;
+
+            //Форматирование дробных чисел
+            result = string.Format("Товар {0} стоимостью {1:f}", item, price);
+            Console.WriteLine(result);
+            result = string.Format("Товар {0} стоимостью {1:f1}", item, price2);
+            Console.WriteLine(result);
+            result = string.Format("Товар {0} стоимостью {1:f4}", item, price2);
+            Console.WriteLine(result);
+
+            //Форматирование денежных значений
+            result = string.Format("Товар {0} стоимостью {1:c0}", item, price2);
+            Console.WriteLine(result);
+            result = string.Format("Товар {0} стоимостью {1:c2}", item, price2);
+            Console.WriteLine(result);
+
+            //Форматирование процентов
+            var percent = 1 - price / price2;
+            result = string.Format("Товар {0} подешевел на {1:p2} процентов", item, percent);
+            Console.WriteLine(result);
+
+            //Кастомный формат
+            long phone = 88005553535;
+            result = string.Format("{0:# (###) ###-##-##} проще позвонить, чем у кого-то занимать", phone);
+            Console.WriteLine(result);
+
+            //Аналогично для всех способов форматирования
+            result = phone.ToString("# (###) ###-##-## проще позвонить, чем у кого-то занимать");
+            Console.WriteLine(result);
+            //Или даже так
+            Console.WriteLine("{0:# (###) ###-##-##} проще позвонить, чем у кого-то занимать", phone);
+
+            //Удобнее использовать интерполяцию строк
+            result = string.Format($"Товар {item} стоимостью {price}");
+            Console.WriteLine(result);
+
+            Console.WriteLine($"Товар {item} подешевел на {1 - price / price2:p2} процентов");
+
+            Console.WriteLine($"{phone:# (###) ###-##-##} проще позвонить, чем у кого-то занимать");
         }
 
         static void StringIntern()
